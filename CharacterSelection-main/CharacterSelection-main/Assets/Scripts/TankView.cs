@@ -12,6 +12,8 @@ public class TankView : MonoBehaviour
     public Rigidbody rb;
     public MeshRenderer[] childs;
     // Start is called before the first frame update
+    //change test
+
     void Start()
     {
         GameObject cam = GameObject.Find("Main Camera");
