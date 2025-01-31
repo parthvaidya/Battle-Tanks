@@ -290,9 +290,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1348444833255868, guid: 0aac6aef14f064c3fb626270cff2683b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530904687146732, guid: 0aac6aef14f064c3fb626270cff2683b, type: 3}
+      propertyPath: m_TagString
+      value: Military
+      objectReference: {fileID: 0}
     - target: {fileID: 1633404186159690, guid: 0aac6aef14f064c3fb626270cff2683b, type: 3}
       propertyPath: m_Name
       value: CompleteLevelArt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633404186159690, guid: 0aac6aef14f064c3fb626270cff2683b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4366463266053016, guid: 0aac6aef14f064c3fb626270cff2683b, type: 3}
       propertyPath: m_RootOrder
@@ -336,6 +348,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366463266053016, guid: 0aac6aef14f064c3fb626270cff2683b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65502929153582510, guid: 0aac6aef14f064c3fb626270cff2683b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65623809108604386, guid: 0aac6aef14f064c3fb626270cff2683b,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

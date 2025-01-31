@@ -68,6 +68,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3542300168025260804}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8634178577717646909}
   m_SourcePrefab: {fileID: 100100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
 --- !u!1 &418947690719667599 stripped
 GameObject:
@@ -87,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894f8bdc5fdf4614c99d6a0fc337bd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 20
   lifeTime: 3
 --- !u!54 &-8539143998299167910
 Rigidbody:
@@ -97,7 +101,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418947690719667599}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -115,7 +119,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!96 &3542300168025260804
 TrailRenderer:
   serializedVersion: 3
@@ -124,7 +128,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418947690719667599}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -229,3 +233,24 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!65 &8634178577717646909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418947690719667599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2987081, y: 0.3109792, z: 0.5252612}
+  m_Center: {x: 0, y: 0.006135516, z: 0.19800001}

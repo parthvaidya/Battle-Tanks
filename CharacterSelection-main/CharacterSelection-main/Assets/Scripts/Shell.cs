@@ -13,20 +13,26 @@ public class Shell : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Ensure the Rigidbody exists
+        // Ensure Rigidbody exists and bullet moves forward
         if (rb != null)
         {
             rb.velocity = transform.forward * speed; // Move forward instantly
         }
 
-        // Destroy bullet after a certain time to avoid memory leaks
+        // Destroy bullet after lifetime to avoid memory leaks
         Destroy(gameObject, lifeTime);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Play an impact effect (if needed)
-        Debug.Log("Bullet hit: " + collision.gameObject.name);
+        // Debug log when the bullet collides
+        Debug.Log($"Bullet hit: {collision.gameObject.name}");
+
+        if (collision.gameObject.CompareTag("Military"))
+        {
+            Debug.Log("Bullet hit Military");
+            Destroy(collision.gameObject); // Destroy the Military object
+        }
 
         // Destroy the bullet on any collision
         Destroy(gameObject);

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3628740174259600985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.53, z: 0.88}
+  m_LocalPosition: {x: 0, y: 1.61, z: 1.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,8 +183,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7760447, y: 2.5173929, z: 2.6387691}
-  m_Center: {x: 0.018477261, y: 1.1985728, z: -0.08016324}
+  m_Size: {x: 1.7760447, y: 2.2433915, z: 2.1950777}
+  m_Center: {x: 0.018477261, y: 1.0615721, z: 0.004462838}
 --- !u!23 &6679685340619307138 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300006, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
