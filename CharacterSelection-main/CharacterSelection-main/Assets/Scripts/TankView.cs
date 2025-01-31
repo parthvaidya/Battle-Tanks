@@ -14,6 +14,9 @@ public class TankView : MonoBehaviour
     // Start is called before the first frame update
     //change test
 
+    public Transform firePoint; 
+    public GameObject shellPrefab;
+
     void Start()
     {
         GameObject cam = GameObject.Find("Main Camera");
@@ -34,6 +37,11 @@ public class TankView : MonoBehaviour
         if(rotation != 0)
         {
             tankController.Rotate(rotation, tankController.GetTankModel().rotationSpeed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            tankController.Fire();
         }
     }
 

@@ -39,4 +39,18 @@ public class TankController
         return tankModel;
     }
 
+    public void Fire()
+    {
+        if (tankView.shellPrefab != null && tankView.firePoint != null)
+        {
+            GameObject shellInstance = GameObject.Instantiate(tankView.shellPrefab, tankView.firePoint.position, tankView.firePoint.rotation);
+            Rigidbody shellRb = shellInstance.GetComponent<Rigidbody>();
+
+            if (shellRb != null)
+            {
+                shellRb.velocity = tankView.firePoint.forward * 20f; // Adjust bullet speed
+            }
+        }
+    }
+
 }
