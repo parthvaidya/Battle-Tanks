@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TankView : MonoBehaviour
@@ -16,6 +17,7 @@ public class TankView : MonoBehaviour
 
     public Transform firePoint; 
     public GameObject shellPrefab;
+    //public TextMeshProUGUI healthText;
 
     void Start()
     {
@@ -54,7 +56,8 @@ public class TankView : MonoBehaviour
     public void SetTankController(TankController _tankController)
     {
         tankController = _tankController;
-        
+        //UpdateHealthUI();
+
     }
 
     public Rigidbody GetRigidbody() { return rb; }
@@ -66,4 +69,16 @@ public class TankView : MonoBehaviour
             childs[i].material = color;
         }
     }
+
+    //public void UpdateHealthUI()
+    //{
+    //    if (healthText != null)
+    //    {
+    //        healthText.text = "Health: " + tankController.GetTankModel().health;
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("Health UI Text is not assigned in the inspector!");
+    //    }
+    //}
 }

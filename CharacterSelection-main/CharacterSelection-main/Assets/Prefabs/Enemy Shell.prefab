@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
       propertyPath: m_Name
-      value: Shell
+      value: Enemy Shell
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,10 +68,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8634178577717646909}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3814570906665763798}
   m_SourcePrefab: {fileID: 100100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
 --- !u!1 &418947690719667599 stripped
 GameObject:
@@ -240,15 +236,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2987081, y: 0.3109792, z: 0.5252612}
   m_Center: {x: 0, y: 0.006135516, z: 0.19800001}
---- !u!114 &3814570906665763798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418947690719667599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce65c77ed49312f4b9fd123019ff8135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

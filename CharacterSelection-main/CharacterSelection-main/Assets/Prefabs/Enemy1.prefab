@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8023210224231322746}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,35 +41,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_Name
-      value: Tank
-      objectReference: {fileID: 0}
-    - target: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
-      propertyPath: m_Layer
-      value: 6
+      value: Enemy1
       objectReference: {fileID: 0}
     - target: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 100114, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 100116, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 100118, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 100120, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 100124, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
-      propertyPath: m_Layer
-      value: 6
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 400112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -122,15 +98,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5661168676798150946}
-    - targetCorrespondingSourceObject: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 9184436915716635491}
     - targetCorrespondingSourceObject: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2575864000560562708}
+    - targetCorrespondingSourceObject: {fileID: 100112, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8293235765219928184}
   m_SourcePrefab: {fileID: 100100000, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd, type: 3}
 --- !u!4 &6679685340616882712 stripped
 Transform:
@@ -144,27 +120,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6679685340617007332}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5661168676798150946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679685340617107444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aafc07c0acf5be749a669c7371f009bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 9184436915716635491}
-  childs:
-  - {fileID: 6679685340619307140}
-  - {fileID: 6679685340619307138}
-  - {fileID: 6679685340619307148}
-  - {fileID: 6679685340619307142}
-  firePoint: {fileID: 8023210224231322746}
-  shellPrefab: {fileID: 418947690719667599, guid: a08059f4adb518d49b08a6ba358ef783,
-    type: 3}
 --- !u!54 &9184436915716635491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -213,6 +168,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7760447, y: 2.2433915, z: 2.1950777}
   m_Center: {x: 0.018477261, y: 1.0615721, z: 0.004462838}
+--- !u!114 &8293235765219928184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6679685340617107444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e952393b8ff0b448ec0f4f10b243bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  rotationSpeed: 50
+  health: 100
+  rb: {fileID: 9184436915716635491}
+  childs:
+  - {fileID: 6679685340619307140}
+  - {fileID: 6679685340619307138}
+  - {fileID: 6679685340619307148}
+  - {fileID: 6679685340619307142}
+  firePoint: {fileID: 8023210224231322746}
+  shellPrefab: {fileID: 418947690719667599, guid: a08059f4adb518d49b08a6ba358ef783,
+    type: 3}
+  player: {fileID: 6679685340616882708, guid: 2754dbd88308d2a4e85b7202067dfbac, type: 3}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  shootingRange: 20
+  fireCooldown: 2
 --- !u!23 &6679685340619307138 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300006, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,
