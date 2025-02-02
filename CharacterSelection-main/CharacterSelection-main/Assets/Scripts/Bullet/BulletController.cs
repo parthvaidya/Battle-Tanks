@@ -35,12 +35,33 @@ public class BulletController
     {
         if (collision == null) return;
 
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Military") || collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Enemy") )
         {
+            if (HealthEnemyTank.Instance == null)
+            {
+                Debug.LogError("HealthEnemyTank.Instance is null! Make sure there's a GameObject with HealthEnemyTank component in the scene.");
+                return;
+            }
+            EnemyTankView enemyTank = collision.gameObject.GetComponent<EnemyTankView>();
+            if (enemyTank != null)
+            {
+                HealthEnemyTank.Instance.TakeDamage(enemyTank, 10);
+            }
             Debug.Log($"Bullet hit: {collision.gameObject.name}");
+            //HealthManagerTank.Instance.TakeDamage(10);
             // Here you might want to apply damage to the hit object
             // var hitObject = collision.gameObject.GetComponent<IDamageable>();
             // if (hitObject != null) hitObject.TakeDamage(bulletModel.damage);
+        }
+
+        else if(collision.gameObject.CompareTag("Military"))
+        {
+
+        }
+
+        else  if(collision.gameObject.CompareTag("Player"))
+        {
+            HealthManagerTank.Instance.TakeDamage(10);
         }
 
         GameObject.Destroy(bulletView.gameObject);

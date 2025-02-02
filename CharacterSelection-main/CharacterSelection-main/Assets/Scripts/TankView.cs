@@ -17,13 +17,17 @@ public class TankView : MonoBehaviour
 
     public Transform firePoint; 
     public GameObject shellPrefab;
-    //public TextMeshProUGUI healthText;
+    [SerializeField] public TextMeshProUGUI healthText;
 
     void Start()
     {
         GameObject cam = GameObject.Find("Main Camera");
         cam.transform.SetParent(transform);
         cam.transform.position = new Vector3(0f, 3f, -6.5f);
+        if (HealthManagerTank.Instance != null && healthText != null)
+        {
+            HealthManagerTank.Instance.healthText = healthText; // Assign UI reference
+        }
     }
 
     // Update is called once per frame

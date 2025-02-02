@@ -83,6 +83,7 @@ public class EnemyTankController
         if (tankView.shellPrefab != null && tankView.firePoint != null)
         {
             BulletModel bulletModel = GetBulletModelForTank(tankModel.tankType);
+            SoundManager.Instance.Play(Sounds.Shoot);
             BulletController bulletController = new BulletController(
                 bulletModel,
                 tankView.shellPrefab.GetComponent<BulletView>(),

@@ -21,12 +21,14 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
+        //SoundManager.Instance.Play(Sounds.ButtonClick);
         SceneManager.LoadScene(1);
     }
 
 
     public void Quiting()
     {
+        //SoundManager.Instance.Play(Sounds.ButtonClick);
         SceneManager.LoadScene(2);
     }
 
