@@ -26,6 +26,7 @@ public class TankController
 
     public void Move(float movement, float movementSpeed)
     {
+        //SoundManager.Instance.Play(Sounds.TankMoving);
         rb.velocity = tankView.transform.forward * movement * movementSpeed;
     }
 
@@ -57,24 +58,7 @@ public class TankController
         }
     }
 
-    //public void TakeDamage(int amount)
-    //{
-    //    tankModel.health -= amount;
-    //    UpdateHealthUI();
-
-    //    if (tankModel.health <= 0)
-    //    {
-    //        Debug.Log($"{tankModel.tankTypes} tank destroyed!");
-    //    }
-    //}
-
-    //private void UpdateHealthUI()
-    //{
-    //    if (tankView != null)
-    //    {
-    //        tankView.UpdateHealthUI();
-    //    }
-    //}
+   
     private BulletModel GetBulletModelForTank(TankTypes tankType)
     {
         switch (tankType)
@@ -90,18 +74,6 @@ public class TankController
         }
     }
 
-    //public void Fire()
-    //{
-    //    if (tankView.shellPrefab != null && tankView.firePoint != null)
-    //    {
-    //        GameObject shellInstance = GameObject.Instantiate(tankView.shellPrefab, tankView.firePoint.position, tankView.firePoint.rotation);
-    //        Rigidbody shellRb = shellInstance.GetComponent<Rigidbody>();
-
-    //        if (shellRb != null)
-    //        {
-    //            shellRb.velocity = tankView.firePoint.forward * 20f; // Adjust bullet speed
-    //        }
-    //    }
-    //}
+   
 
 }

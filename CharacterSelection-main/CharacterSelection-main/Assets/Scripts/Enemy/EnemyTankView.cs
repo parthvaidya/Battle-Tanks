@@ -34,6 +34,7 @@ public class EnemyTankView : MonoBehaviour
     {
         moveTimer = moveDuration;
         fireTimer = fireCooldown;
+        HealthEnemyTank.Instance.RegisterTank(this);
 
         Debug.Log($"{gameObject.name} spawned with {health} HP.");
     }

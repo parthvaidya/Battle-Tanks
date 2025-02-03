@@ -40,6 +40,7 @@ public class HealthManagerTank : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Tank Destroyed!");
+            SoundManager.Instance.Play(Sounds.EnemyDeath);
             SceneManager.LoadScene(2);
             // You can trigger an explosion, destroy the tank, or handle game over here.
         }

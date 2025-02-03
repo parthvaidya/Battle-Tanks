@@ -80,5 +80,5 @@ public enum Sounds
     Music,
     Shoot,
     MissileSound,
-    collectItem
+    TankMoving
 }
