@@ -205,7 +205,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   shootingRange: 50
-  fireCooldown: 0.5
+  fireCooldown: 0.3
 --- !u!23 &6679685340619307138 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300006, guid: 002e2a607f5b64c48be0b3b0d8b8bfdd,

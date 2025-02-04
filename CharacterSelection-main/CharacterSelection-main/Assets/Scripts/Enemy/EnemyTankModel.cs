@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemyTankModel 
 {
-    private EnemyTankController tankController;
+    private EnemyTankController tankController; //call controller
     public float movementSpeed;
     public float rotationSpeed;
     public int health;
     public EnemyTankTypes tankType;
     public Material color;
 
+    //initalize tank model
     public EnemyTankModel(float _movement, float _rotation, int _health, EnemyTankTypes _type, Material _color)
     {
         movementSpeed = _movement;
@@ -20,6 +21,7 @@ public class EnemyTankModel
         color = _color;
     }
 
+    //set controller
     public void SetTankController(EnemyTankController _tankController)
     {
         tankController = _tankController;

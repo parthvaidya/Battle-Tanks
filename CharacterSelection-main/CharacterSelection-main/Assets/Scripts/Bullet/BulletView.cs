@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BulletView : MonoBehaviour
 {
-    private BulletController bulletController;
+    private BulletController bulletController; //call controller to connect
     private Rigidbody rb;
     private bool isInitialized = false;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>(); //find component
     }
 
     private void Start()
@@ -21,7 +21,7 @@ public class BulletView : MonoBehaviour
             return;
         }
 
-        rb.velocity = transform.forward * bulletController.GetBulletModel().speed;
+        rb.velocity = transform.forward * bulletController.GetBulletModel().speed; //give initial speed to bullet
         Destroy(gameObject, 5f);
     }
 
@@ -33,7 +33,7 @@ public class BulletView : MonoBehaviour
             return;
         }
 
-        bulletController.OnImpact(collision);
+        bulletController.OnImpact(collision); //on impact
     }
 
     public void Initialize(BulletController controller)
@@ -44,7 +44,7 @@ public class BulletView : MonoBehaviour
             return;
         }
 
-        bulletController = controller;
-        isInitialized = true;
+        bulletController = controller; //set the controller
+        isInitialized = true; //yes initialized
     }
 }

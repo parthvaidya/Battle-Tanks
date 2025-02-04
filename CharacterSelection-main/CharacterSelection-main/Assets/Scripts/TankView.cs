@@ -12,13 +12,14 @@ public class TankView : MonoBehaviour
 
     public Rigidbody rb;
     public MeshRenderer[] childs;
-    // Start is called before the first frame update
-    //change test
+    
 
     public Transform firePoint; 
     public GameObject shellPrefab;
     [SerializeField] public TextMeshProUGUI healthText;
 
+
+    //camera follows the player 
     void Start()
     {
         GameObject cam = GameObject.Find("Main Camera");
@@ -26,11 +27,12 @@ public class TankView : MonoBehaviour
         cam.transform.position = new Vector3(0f, 3f, -6.5f);
         if (HealthManagerTank.Instance != null && healthText != null)
         {
-            HealthManagerTank.Instance.healthText = healthText; // Assign UI reference
+            HealthManagerTank.Instance.healthText = healthText; //give health text for updating the textmeshpro
         }
     }
 
-    // Update is called once per frame
+    
+    //for movement and physics
     void Update()
     {
         Movement();
@@ -45,27 +47,33 @@ public class TankView : MonoBehaviour
             tankController.Rotate(rotation, tankController.GetTankModel().rotationSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             tankController.Fire();
         }
     }
 
+
+    //movement logic
     private void Movement()
     {
         movement = Input.GetAxis("Vertical");
         rotation = Input.GetAxis("Horizontal");
     }
 
+
+    //connect view and tankcontroller
     public void SetTankController(TankController _tankController)
     {
         tankController = _tankController;
-        //UpdateHealthUI();
+        
 
     }
 
-    public Rigidbody GetRigidbody() { return rb; }
+    public Rigidbody GetRigidbody() { return rb; } //get tank physics for the body
 
+
+    //change color for each tanks
     public void ChangeColor(Material color)
     {
         for(int i = 0; i< childs.Length; i++)
@@ -74,15 +82,5 @@ public class TankView : MonoBehaviour
         }
     }
 
-    //public void UpdateHealthUI()
-    //{
-    //    if (healthText != null)
-    //    {
-    //        healthText.text = "Health: " + tankController.GetTankModel().health;
-    //    }
-    //    else
-    //    {
-    //        Debug.LogWarning("Health UI Text is not assigned in the inspector!");
-    //    }
-    //}
+    
 }

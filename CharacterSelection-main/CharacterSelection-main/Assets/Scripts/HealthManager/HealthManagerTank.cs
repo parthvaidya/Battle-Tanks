@@ -33,7 +33,8 @@ public class HealthManagerTank : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
+        
+        currentHealth -= amount; //reduce health
         currentHealth = Mathf.Max(0, currentHealth); // Prevent health from going below 0
         UpdateHealthUI();
 
@@ -42,10 +43,12 @@ public class HealthManagerTank : MonoBehaviour
             Debug.Log("Tank Destroyed!");
             SoundManager.Instance.Play(Sounds.EnemyDeath);
             SceneManager.LoadScene(2);
-            // You can trigger an explosion, destroy the tank, or handle game over here.
+            
         }
     }
+    
 
+    //update textmesh pro
     private void UpdateHealthUI()
     {
         if (healthText != null)

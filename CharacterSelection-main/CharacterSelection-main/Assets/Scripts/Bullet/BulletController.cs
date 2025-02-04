@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BulletController 
 {
+
+    //call view and model
     private BulletModel bulletModel;
     private BulletView bulletView;
 
+
+    //connect the model and view , spawn position and rotation
     public BulletController(BulletModel model, BulletView viewPrefab, Vector3 spawnPosition, Quaternion spawnRotation)
     {
         if (model == null)
@@ -21,14 +25,14 @@ public class BulletController
             return;
         }
 
-        bulletModel = model;
-        bulletView = GameObject.Instantiate(viewPrefab, spawnPosition, spawnRotation);
-        bulletView.Initialize(this);
+        bulletModel = model; //initalize model
+        bulletView = GameObject.Instantiate(viewPrefab, spawnPosition, spawnRotation); //instantiate the bullet
+        bulletView.Initialize(this); //initialize this component
     }
 
     public BulletModel GetBulletModel()
     {
-        return bulletModel;
+        return bulletModel; 
     }
 
     public void OnImpact(Collision collision)
@@ -48,15 +52,12 @@ public class BulletController
                 HealthEnemyTank.Instance.TakeDamage(enemyTank, 10);
             }
             Debug.Log($"Bullet hit: {collision.gameObject.name}");
-            //HealthManagerTank.Instance.TakeDamage(10);
-            // Here you might want to apply damage to the hit object
-            // var hitObject = collision.gameObject.GetComponent<IDamageable>();
-            // if (hitObject != null) hitObject.TakeDamage(bulletModel.damage);
+            
         }
 
         else if(collision.gameObject.CompareTag("Military"))
         {
-
+            //SoundManager.Instance.Play(Sounds.EnemyDeath);
         }
 
         else  if(collision.gameObject.CompareTag("Player"))

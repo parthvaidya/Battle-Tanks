@@ -15,16 +15,15 @@ public class EnemyTankSpawner : MonoBehaviour
 
     void Start()
     {
-        SpawnEnemy(heavyAssaultPrefab, heavyMaterial, new Vector3(-10, 0, 0));
-        SpawnEnemy(scoutPrefab, scoutMaterial, new Vector3(0, 0, 10));
-        SpawnEnemy(artilleryPrefab, artilleryMaterial, new Vector3(10, 0, -10));
+        SpawnEnemy(heavyAssaultPrefab, heavyMaterial, new Vector3(-15, 0, 0));
+        SpawnEnemy(scoutPrefab, scoutMaterial, new Vector3(0, 0, 20));
+        SpawnEnemy(artilleryPrefab, artilleryMaterial, new Vector3(15, 0, -11));
     }
 
     void SpawnEnemy(EnemyTankView prefab, Material material, Vector3 spawnPosition)
     {
         EnemyTankView enemyTankView = Instantiate(prefab, spawnPosition, Quaternion.identity);
-        //Debug.Log("Spawning enemy: " + prefab.name);
-        // Now, health and speed come from the Inspector
+        
         EnemyTankModel model = new EnemyTankModel(
             enemyTankView.movementSpeed,
             enemyTankView.rotationSpeed,

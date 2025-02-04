@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TankModel 
 {
+    //connect TankController to the Model
     private TankController tankController;
     public float movementSpeed;
     public float rotationSpeed;
@@ -11,6 +12,7 @@ public class TankModel
     public Material color;
     public int health;
 
+    //create the constructor of TankModel based on attributes
     public TankModel(float _movement, float _rotation , TankTypes tank, Material _color , int _health)
     {
         movementSpeed = _movement;
@@ -19,6 +21,9 @@ public class TankModel
         color = _color;
         health = _health;
     }
+
+
+    //set the tank controller to connect model and controller
 
     public void SetTankController(TankController _tankController)
     {

@@ -204,7 +204,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  shootingRange: 50
+  shootingRange: 80
   fireCooldown: 0.5
 --- !u!23 &6679685340619307138 stripped
 MeshRenderer:

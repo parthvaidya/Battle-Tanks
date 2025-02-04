@@ -43,6 +43,7 @@ public class HealthEnemyTank : MonoBehaviour
 
         if (enemyTank.health <= 0)
         {
+            SoundManager.Instance.Play(Sounds.EnemyDeath);
             DestroyTank(enemyTank);
         }
 
@@ -72,6 +73,7 @@ public class HealthEnemyTank : MonoBehaviour
     {
         Debug.Log($"{enemyTank.name} destroyed!");
         enemyTanks.Remove(enemyTank);  // **Remove tank from list before destroying**
+        SoundManager.Instance.Play(Sounds.EnemyDeath);
         Destroy(enemyTank.gameObject);
         UpdateHealthUI(); // Refresh UI after destruction
         if (enemyTanks.Count == 0)
